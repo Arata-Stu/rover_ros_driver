@@ -8,6 +8,7 @@ setup(
     packages=find_packages(include=['rover_ros_driver', 'rover_ros_driver.*']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', ['launch/rover_ros_driver.launch.xml']), 
     ],
     install_requires=['setuptools'],
     zip_safe=True,
