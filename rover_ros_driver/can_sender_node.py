@@ -54,7 +54,7 @@ class CANControlNode(Node):
     
     def throttle_callback(self, msg):
         throttle_value = msg.data
-        self.get_logger().info(f'Received throttle value: {throttle_value}')
+        # self.get_logger().info(f'Received throttle value: {throttle_value}')
         # Convert the throttle value to the appropriate pulse width
         pulse_width = self.convert_throttle_to_pulse(throttle_value)
         frame = servo.set_throttle_pulse_frame(pulse_width)
@@ -62,7 +62,7 @@ class CANControlNode(Node):
     
     def steering_callback(self, msg):
         steering_angle = msg.data
-        self.get_logger().info(f'Received steering angle: {steering_angle}')
+        # self.get_logger().info(f'Received steering angle: {steering_angle}')
         frame = servo.set_steering_angle_frame(steering_angle)
         self.can_channel.writeWait(frame, -1)
     
